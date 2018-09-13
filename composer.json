@@ -1,0 +1,28 @@
+{
+    "name": "phannaly/laravel-helpers",
+    "description": "The php helpers function that extract from Laravel",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "helpers",
+        "laravel",
+        "array",
+        "string"
+    ],
+    "authors": [
+        {
+            "name": "phanna",
+            "email": "studentphanna@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "files": [
+            "src/Array.php",
+            "src/String.php"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7"
+    }
+}
