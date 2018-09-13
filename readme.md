@@ -1,4 +1,4 @@
-#The php helpers function that extract from Laravel
+# The php helpers function that extract from Laravel
 
 [![Build Status](https://travis-ci.org/phannaly/laravel-helpers.svg?branch=master)](https://travis-ci.org/phannaly/laravel-helpers)
 
@@ -837,4 +837,4 @@ See [CODE OF CONDUCT](https://github.com/phannaly/laravel-helpers/blob/master/CO
 
 ## License
 
-This package operates under the MIT License (MIT). See the [LICENSE](https://github.com/phannaly/laravel-helpers/blob/master/LICENSE) file for details.
+This package operates under the MIT License (MIT). See the [LICENSE](https://github.com/phannaly/laravel-helpers/blob/master/LICENSE.md) file for details.
