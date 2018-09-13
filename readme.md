@@ -1,6 +1,6 @@
 # The php helpers function that extract from Laravel
 
-[![Build Status](https://travis-ci.org/phannaly/laravel-helpers.svg?branch=master)](https://travis-ci.org/phannaly/laravel-helpers)
+[![Build Status](https://travis-ci.org/phannaly/laravel-helpers.svg?branch=master)](https://travis-ci.org/phannaly/laravel-helpers)  [![StyleCI](https://github.styleci.io/repos/148669698/shield?branch=master)](https://github.styleci.io/repos/148669698)
 
 This project is independently you don't need to install anything(composer) unless you want to contribute.
 
