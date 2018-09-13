@@ -1,13 +1,13 @@
 <?php
 
 if (! function_exists('append_config')) {
-	/**
-	 * Assign high numeric IDs to a config item to force appending.
-	 * 
-	 * @param  array  $array
-	 * @return  array
-	 */
-	function append_config(array $array)
+    /**
+     * Assign high numeric IDs to a config item to force appending.
+     *
+     * @param  array  $array
+     * @return  array
+     */
+    function append_config(array $array)
     {
         $start = 9999;
 
@@ -33,7 +33,7 @@ if (! function_exists('array_add')) {
      */
     function array_add($array, $key, $value)
     {
-    	if (is_null(array_get($array, $key))) {
+        if (is_null(array_get($array, $key))) {
             array_set($array, $key, $value);
         }
 
@@ -50,7 +50,7 @@ if (! function_exists('array_collapse')) {
      */
     function array_collapse($array)
     {
-    	$results = [];
+        $results = [];
 
         foreach ($array as $values) {
             if ($values instanceof Collection) {
@@ -74,7 +74,7 @@ if (! function_exists('array_divide')) {
      */
     function array_divide($array)
     {
-    	return [array_keys($array), array_values($array)];
+        return [array_keys($array), array_values($array)];
     }
 }
 
@@ -88,7 +88,7 @@ if (! function_exists('array_dot')) {
      */
     function array_dot($array, $prepend = '')
     {
-    	$results = [];
+        $results = [];
 
         foreach ($array as $key => $value) {
             if (is_array($value) && ! empty($value)) {
@@ -113,12 +113,13 @@ if (! function_exists('array_except')) {
     function array_except($array, $keys)
     {
         array_forget($array, $keys);
+
         return $array;
     }
 }
 
 if (! function_exists('array_exists')) {
-     /**
+    /**
      * Determine if the given key exists in the provided array.
      *
      * @param  \ArrayAccess|array  $array
@@ -130,7 +131,8 @@ if (! function_exists('array_exists')) {
         if ($array instanceof ArrayAccess) {
             return $array->offsetExists($key);
         }
-         return array_key_exists($key, $array);
+
+        return array_key_exists($key, $array);
     }
 }
 
@@ -241,7 +243,7 @@ if (! function_exists('array_get')) {
      */
     function array_get($array, $key, $default = null)
     {
-        if (!array_accessible($array)) {
+        if (! array_accessible($array)) {
             return value($default);
         }
         if (is_null($key)) {
@@ -403,6 +405,7 @@ if (! function_exists('array_pull')) {
     {
         $value = array_get($array, $key, $default);
         array_forget($array, $key);
+
         return $value;
     }
 }
@@ -499,6 +502,7 @@ if (! function_exists('array_wrap')) {
         if (is_null($value)) {
             return [];
         }
+
         return ! is_array($value) ? [$value] : $value;
     }
 }
@@ -524,6 +528,7 @@ if (! function_exists('blank')) {
         if ($value instanceof Countable) {
             return count($value) === 0;
         }
+
         return empty($value);
     }
 }
@@ -566,6 +571,7 @@ if (! function_exists('data_get')) {
                     return value($default);
                 }
                 $result = array_pluck($target, $key);
+
                 return in_array('*', $key) ? array_collapse($result) : $result;
             }
             if (array_accessible($target) && array_exists($target, $segment)) {
@@ -576,6 +582,7 @@ if (! function_exists('data_get')) {
                 return value($default);
             }
         }
+
         return $target;
     }
 }
@@ -632,6 +639,7 @@ if (! function_exists('data_set')) {
                 $target[$segment] = $value;
             }
         }
+
         return $target;
     }
 }
@@ -662,22 +670,6 @@ if (! function_exists('head')) {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (! function_exists('last')) {
     /**
      * Get the last element from an array.
@@ -703,6 +695,7 @@ if (! function_exists('isAssoc')) {
     function isAssoc(array $array)
     {
         $keys = array_keys($array);
+
         return array_keys($keys) !== $keys;
     }
 }
@@ -719,6 +712,7 @@ if (! function_exists('explodePluckParameters')) {
     {
         $value = is_string($value) ? explode('.', $value) : $value;
         $key = is_null($key) || is_array($key) ? $key : explode('.', $key);
+
         return [$value, $key];
     }
 }
@@ -747,6 +741,7 @@ if (! function_exists('first')) {
                 return $value;
             }
         }
+
         return value($default);
     }
 }
@@ -764,6 +759,7 @@ if (! function_exists('trait_uses_recursive')) {
         foreach ($traits as $trait) {
             $traits += trait_uses_recursive($trait);
         }
+
         return $traits;
     }
 }
@@ -784,6 +780,7 @@ if (! function_exists('transform')) {
         if (is_callable($default)) {
             return $default($value);
         }
+
         return $default;
     }
 }
@@ -842,6 +839,7 @@ if (! function_exists('dot')) {
                 $results[$prepend.$key] = $value;
             }
         }
+
         return $results;
     }
 }
@@ -873,6 +871,7 @@ if (! function_exists('add')) {
         if (is_null(array_get($array, $key))) {
             array_set($array, $key, $value);
         }
+
         return $array;
     }
 }
@@ -895,7 +894,7 @@ if (! function_exists('collapse')) {
             }
             $results = array_merge($results, $values);
         }
+
         return $results;
     }
 }
-

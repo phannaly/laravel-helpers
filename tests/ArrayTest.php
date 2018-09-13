@@ -69,11 +69,11 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
     {
         $array = ['name' => 'taylor', 'otherDeveloper' => 'dayle'];
         $this->assertEquals('dayle', array_first($array, function ($value) {
-            return $value == 'dayle';
+            return $value === 'dayle';
         }));
     }
 
-     public function testArrayFlatten()
+    public function testArrayFlatten()
     {
         // Flat arrays are unaffected
         $array = ['#foo', '#bar', '#baz'];
@@ -129,7 +129,7 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
         $this->assertFalse(array_has($array, 'foo'));
         $this->assertFalse(array_has($array, 'foo.bar'));
     }
-    
+
     public function testArrayLast()
     {
         $array = [100, 250, 290, 320, 500, 560, 670];
@@ -365,8 +365,6 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
         $this->assertNull(data_get($array, 'posts.*.date'));
     }
 
-    
-
     public function testDataFill()
     {
         $data = ['foo' => 'bar'];
@@ -576,9 +574,6 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
         $array = ['a', 'b', 'c'];
         $this->assertEquals('c', last($array));
     }
-
-
-    
 
     public function testTransform()
     {

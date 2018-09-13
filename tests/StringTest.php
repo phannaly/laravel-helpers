@@ -159,7 +159,7 @@ class StringTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('hello_world', str_slug('hello_world', '_'));
         $this->assertEquals('user-at-host', str_slug('user@host'));
     }
-    
+
     public function testStrStart()
     {
         $this->assertEquals('/test/string', str_start('test/string', '/'));
