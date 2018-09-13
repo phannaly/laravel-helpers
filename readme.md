@@ -1,5 +1,7 @@
 #The php helpers function that extract from Laravel
 
+[![Build Status](https://travis-ci.org/phannaly/laravel-helpers.svg?branch=master)](https://travis-ci.org/phannaly/laravel-helpers)
+
 This project is independently you don't need to install anything(composer) unless you want to contribute.
 
 Most of the code and logic extract from Laravel code base.
@@ -534,28 +536,6 @@ The `camel_case` function converts the given string to `camelCase`:
 $converted = camel_case('foo_bar');
 
 // fooBar
-```
-
-<a name="method-class-basename"></a>
-#### `class_basename()` 
-
-The `class_basename` returns the class name of the given class with the class' namespace removed:
-
-```php
-$class = class_basename('Foo\Bar\Baz');
-
-// Baz
-```
-
-<a name="method-e"></a>
-#### `e()` 
-
-The `e` function runs PHP's `htmlspecialchars` function with the `double_encode` option set to `true` by default:
-
-```php
-echo e('<html>foo</html>');
-
-// &lt;html&gt;foo&lt;/html&gt;
 ```
 
 <a name="method-ends-with"></a>
