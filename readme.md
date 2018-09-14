@@ -732,21 +732,6 @@ $replaced = str_replace_last('the', 'a', 'the quick brown fox jumps over the laz
 // the quick brown fox jumps over a lazy dog
 ```
 
-<a name="method-str-singular"></a>
-#### `str_singular()` 
-
-The `str_singular` function converts a string to its singular form. This function currently only supports the English language:
-
-```php
-$singular = str_singular('cars');
-
-// car
-
-$singular = str_singular('children');
-
-// child
-```
-
 <a name="method-str-slug"></a>
 #### `str_slug()` 
 
