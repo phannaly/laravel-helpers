@@ -746,23 +746,6 @@ if (! function_exists('first')) {
     }
 }
 
-if (! function_exists('trait_uses_recursive')) {
-    /**
-     * Returns all traits used by a trait and its traits.
-     *
-     * @param  string  $trait
-     * @return array
-     */
-    function trait_uses_recursive($trait)
-    {
-        $traits = class_uses($trait);
-        foreach ($traits as $trait) {
-            $traits += trait_uses_recursive($trait);
-        }
-
-        return $traits;
-    }
-}
 if (! function_exists('transform')) {
     /**
      * Transform the given value if it is present.
@@ -784,6 +767,7 @@ if (! function_exists('transform')) {
         return $default;
     }
 }
+
 if (! function_exists('value')) {
     /**
      * Return the default value of the given value.
@@ -796,17 +780,7 @@ if (! function_exists('value')) {
         return $value instanceof Closure ? $value() : $value;
     }
 }
-if (! function_exists('windows_os')) {
-    /**
-     * Determine whether the current environment is Windows based.
-     *
-     * @return bool
-     */
-    function windows_os()
-    {
-        return strtolower(substr(PHP_OS, 0, 3)) === 'win';
-    }
-}
+
 if (! function_exists('with')) {
     /**
      * Return the given value, optionally passed through the given callback.
@@ -821,29 +795,6 @@ if (! function_exists('with')) {
     }
 }
 
-if (! function_exists('dot')) {
-    /**
-     * Flatten a multi-dimensional associative array with dots.
-     *
-     * @param  array   $array
-     * @param  string  $prepend
-     * @return array
-     */
-    function dot($array, $prepend = '')
-    {
-        $results = [];
-        foreach ($array as $key => $value) {
-            if (is_array($value) && ! empty($value)) {
-                $results = array_merge($results, dot($value, $prepend.$key.'.'));
-            } else {
-                $results[$prepend.$key] = $value;
-            }
-        }
-
-        return $results;
-    }
-}
-
 if (! function_exists('array_accessible')) {
     /**
      * Determine whether the given value is array accessible.
@@ -854,47 +805,5 @@ if (! function_exists('array_accessible')) {
     function array_accessible($value)
     {
         return is_array($value) || $value instanceof ArrayAccess;
-    }
-}
-
-if (! function_exists('add')) {
-    /**
-     * Add an element to an array using "dot" notation if it doesn't exist.
-     *
-     * @param  array   $array
-     * @param  string  $key
-     * @param  mixed   $value
-     * @return array
-     */
-    function add($array, $key, $value)
-    {
-        if (is_null(array_get($array, $key))) {
-            array_set($array, $key, $value);
-        }
-
-        return $array;
-    }
-}
-
-if (! function_exists('collapse')) {
-    /**
-     * Collapse an array of arrays into a single array.
-     *
-     * @param  array  $array
-     * @return array
-     */
-    function collapse($array)
-    {
-        $results = [];
-        foreach ($array as $values) {
-            if ($values instanceof Collection) {
-                $values = $values->all();
-            } elseif (! is_array($values)) {
-                continue;
-            }
-            $results = array_merge($results, $values);
-        }
-
-        return $results;
     }
 }
