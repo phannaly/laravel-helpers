@@ -685,43 +685,6 @@ $truncated = str_limit('The quick brown fox jumps over the lazy dog', 20, ' (...
 // The quick brown fox (...)
 ```
 
-<a name="method-str-ordered-uuid"></a>
-#### `Str::orderedUuid()` 
-
-The `Str::orderedUuid` method generates a "timestamp first" UUID that may be efficiently stored in an indexed database column:
-
-```php
-use Illuminate\Support\Str;
-
-return (string) Str::orderedUuid();
-```
-<a name="method-str-plural"></a>
-#### `str_plural()` 
-
-The `str_plural` function converts a string to its plural form. This function currently only supports the English language:
-
-```php
-$plural = str_plural('car');
-
-// cars
-
-$plural = str_plural('child');
-
-// children
-```
-
-You may provide an integer as a second argument to the function to retrieve the singular or plural form of the string:
-
-```php
-$plural = str_plural('child', 2);
-
-// children
-
-$plural = str_plural('child', 1);
-
-// child
-```
-
 <a name="method-str-random"></a>
 #### `str_random()` 
 
