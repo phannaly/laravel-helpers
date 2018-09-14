@@ -16,6 +16,9 @@ But If you want to install by composer, please follow command below
 
     composer require phannaly/laravel-helpers
 
+This library will load automatically after you install it.
+Done!, you are good to go.
+
 <a name="available-methods"></a>
 ## Available Methods
 
