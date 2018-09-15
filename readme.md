@@ -41,6 +41,7 @@ Done!, you are good to go.
 * [array_pull](#method-array-pull)
 * [array_random](#method-array-random)
 * [array_set](#method-array-set)
+* [array_sort](#method-array-sort)
 * [array_where](#method-array-where)
 * [array_wrap](#method-array-wrap)
 * [data_fill](#method-data-fill)
@@ -352,6 +353,41 @@ array_set($array, 'products.desk.price', 200);
 
 // ['products' => ['desk' => ['price' => 200]]]
 ```
+<a name="method-array-sort"></a>
+#### `array_sort()` 
+
+The array_sort function sorts an array by its values:
+
+```php
+$array = ['Desk', 'Table', 'Chair'];
+
+$sorted = array_sort($array);
+
+// ['Chair', 'Desk', 'Table']
+```
+
+You may also sort the array by the results of the given Closure:
+
+```php
+$array = [
+    ['name' => 'Desk'],
+    ['name' => 'Table'],
+    ['name' => 'Chair'],
+];
+
+$sorted = array_values(array_sort($array, function ($value) {
+    return $value['name'];
+}));
+
+/*
+    [
+        ['name' => 'Chair'],
+        ['name' => 'Desk'],
+        ['name' => 'Table'],
+    ]
+*/
+```
+
 
 <a name="method-array-where"></a>
 #### `array_where()` 
