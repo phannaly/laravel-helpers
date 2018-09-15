@@ -818,10 +818,12 @@ if (! function_exists('array_sort')) {
      */
     function array_sort($array, $callback = null)
     {
-        asort($array);
-            
-        if (!is_null($callback)) {
+        if (isAssoc($array)) {
+            ksort($array);
+        } elseif (!is_null($callback)) {
             $callback ? krsort($array, SORT_REGULAR) : ksort($array, SORT_REGULAR);
+        } else {
+            sort($array);
         }
 
         return $array;

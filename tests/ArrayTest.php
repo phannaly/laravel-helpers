@@ -632,6 +632,10 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
         // sort with dot notation
         $sortedWithDotNotation = array_values(array_sort($unsorted, 'name'));
         $this->assertEquals($expected, $sortedWithDotNotation);
+
+        $array = ['Desk', 'Table', 'Chair'];
+        $sorted = array_sort($array);
+        $this->assertEquals(['Chair', 'Desk', 'Table'], $sorted);
     }
 
 }
