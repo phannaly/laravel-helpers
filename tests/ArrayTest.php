@@ -607,6 +607,33 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
             return $five + 5;
         }));
     }
+
+    public function testArraySort()
+    {
+        $unsorted = [
+            ['name' => 'Desk'],
+            ['name' => 'Chair'],
+        ];
+
+        $expected = [
+            ['name' => 'Chair'],
+            ['name' => 'Desk'],
+        ];
+
+        $sorted = array_values(array_sort($unsorted));
+        $this->assertEquals($expected, $sorted);
+
+        // sort with closure
+        $sortedWithClosure = array_values(array_sort($unsorted, function ($value) {
+            return $value['name'];
+        }));
+        $this->assertEquals($expected, $sortedWithClosure);
+
+        // sort with dot notation
+        $sortedWithDotNotation = array_values(array_sort($unsorted, 'name'));
+        $this->assertEquals($expected, $sortedWithDotNotation);
+    }
+
 }
 
 trait SupportTestTraitOne

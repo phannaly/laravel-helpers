@@ -807,3 +807,23 @@ if (! function_exists('array_accessible')) {
         return is_array($value) || $value instanceof ArrayAccess;
     }
 }
+
+if (! function_exists('array_sort')) {
+    /**
+     * Sort the array by the given callback or attribute name.
+     *
+     * @param  array  $array
+     * @param  callable|string|null  $callback
+     * @return array
+     */
+    function array_sort($array, $callback = null)
+    {
+        asort($array);
+            
+        if (!is_null($callback)) {
+            $callback ? krsort($array, SORT_REGULAR) : ksort($array, SORT_REGULAR);
+        }
+
+        return $array;
+    }
+}
