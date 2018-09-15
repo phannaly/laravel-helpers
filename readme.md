@@ -42,6 +42,7 @@ Done!, you are good to go.
 * [array_random](#method-array-random)
 * [array_set](#method-array-set)
 * [array_sort](#method-array-sort)
+* [array_sort_recursive](#method-array-sort-recursive)
 * [array_where](#method-array-where)
 * [array_wrap](#method-array-wrap)
 * [data_fill](#method-data-fill)
@@ -388,6 +389,26 @@ $sorted = array_values(array_sort($array, function ($value) {
 */
 ```
 
+<a name="method-array-sort-recursive"></a>
+#### `array_sort_recursive()` 
+
+The array_sort_recursive function recursively sorts an array using the sort function:
+
+```php
+$array = [
+    ['Roman', 'Taylor', 'Li'],
+    ['PHP', 'Ruby', 'JavaScript'],
+];
+
+$sorted = array_sort_recursive($array);
+
+/*
+    [
+        ['Li', 'Roman', 'Taylor'],
+        ['JavaScript', 'PHP', 'Ruby'],
+    ]
+*/
+```
 
 <a name="method-array-where"></a>
 #### `array_where()` 

@@ -638,6 +638,37 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(['Chair', 'Desk', 'Table'], $sorted);
     }
 
+    public function testArraySortRecursive()
+    {
+        $array = [
+            [
+                'foo',
+                'bar',
+                'baz',
+            ],
+            [
+                'baz',
+                'foo',
+                'bar',
+            ],
+        ];
+
+        $assumedArray = [
+            [
+                'bar',
+                'baz',
+                'foo',
+            ],
+            [
+                'bar',
+                'baz',
+                'foo',
+            ],
+        ];
+
+        $this->assertEquals($assumedArray, array_sort_recursive($array));
+    }
+
 }
 
 trait SupportTestTraitOne

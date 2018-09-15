@@ -829,3 +829,28 @@ if (! function_exists('array_sort')) {
         return $array;
     }
 }
+
+if (! function_exists('array_sort_recursive')) {
+    /**
+     * Recursively sort an array by keys and values.
+     *
+     * @param  array  $array
+     * @return array
+     */
+    function array_sort_recursive($array)
+    {
+        foreach ($array as &$value) {
+            if (is_array($value)) {
+                $value = array_sort_recursive($value);
+            }
+        }
+
+        if (isAssoc($array)) {
+            ksort($array);
+        } else {
+            sort($array);
+        }
+
+        return $array;
+    }
+}
