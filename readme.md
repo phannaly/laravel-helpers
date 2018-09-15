@@ -1,4 +1,4 @@
-# The php helpers function that extract from Laravel
+# The PHP helpers function that extract from Laravel
 
 [![Build Status](https://travis-ci.org/phannaly/laravel-helpers.svg?branch=master)](https://travis-ci.org/phannaly/laravel-helpers)  [![StyleCI](https://github.styleci.io/repos/148669698/shield?branch=master)](https://github.styleci.io/repos/148669698)
 
@@ -79,12 +79,6 @@ Done!, you are good to go.
 #### `array_add()` 
 
 The `array_add` function adds a given key / value pair to an array if the given key doesn't already exist in the array:
-
-```php
-$array = array_add(['name' => 'Desk'], 'price', 100);
-
-// ['name' => 'Desk', 'price' => 100]
-```
 
 ```php
 $array = array_add(['name' => 'Desk'], 'price', 100);

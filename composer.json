@@ -1,6 +1,6 @@
 {
     "name": "phannaly/laravel-helpers",
-    "description": "The php helpers function that extract from Laravel",
+    "description": "The PHP helpers function that extract from Laravel",
     "type": "library",
     "license": "MIT",
     "keywords": [
