@@ -637,7 +637,6 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
         $sorted = array_sort($array);
         $this->assertEquals(['Chair', 'Desk', 'Table'], $sorted);
     }
-
 }
 
 trait SupportTestTraitOne
