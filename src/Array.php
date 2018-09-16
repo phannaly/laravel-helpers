@@ -820,7 +820,7 @@ if (! function_exists('array_sort')) {
     {
         if (isAssoc($array)) {
             ksort($array);
-        } elseif (!is_null($callback)) {
+        } elseif (! is_null($callback)) {
             $callback ? krsort($array, SORT_REGULAR) : ksort($array, SORT_REGULAR);
         } else {
             sort($array);
