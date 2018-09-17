@@ -181,4 +181,11 @@ class StringTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('Jefferson Costella', title_case('jefferson costella'));
         $this->assertEquals('Jefferson Costella', title_case('jefFErson coSTella'));
     }
+
+    public function testPregReplaceArray()
+    {
+        $string = 'Number between :start and :end';
+        $replaced = preg_replace_array('/:[a-z_]+/', ['10', '50'], $string);
+        $this->assertEquals('Number between 10 and 50', $replaced);
+    }
 }
