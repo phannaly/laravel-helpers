@@ -668,7 +668,6 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals($assumedArray, array_sort_recursive($array));
     }
-
 }
 
 trait SupportTestTraitOne
