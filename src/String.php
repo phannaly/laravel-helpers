@@ -433,13 +433,13 @@ if (! function_exists('str_ascii')) {
      */
     function str_ascii($value, $language = 'en')
     {
-        $languageSpecific = languageSpecificCharsArray($language);
+        $languageSpecific = language_specific_chars_array($language);
 
         if (! is_null($languageSpecific)) {
             $value = str_replace($languageSpecific[0], $languageSpecific[1], $value);
         }
 
-        foreach (charsArray() as $key => $val) {
+        foreach (chars_array() as $key => $val) {
             $value = str_replace($val, $key, $value);
         }
 
@@ -447,7 +447,7 @@ if (! function_exists('str_ascii')) {
     }
 }
 
-if (! function_exists('charsArray')) {
+if (! function_exists('chars_array')) {
     /**
      * Returns the replacements for the ascii method.
      *
@@ -457,7 +457,7 @@ if (! function_exists('charsArray')) {
      *
      * @return array
      */
-    function charsArray()
+    function chars_array()
     {
         static $charsArray;
 
@@ -583,7 +583,7 @@ if (! function_exists('charsArray')) {
     }
 }
 
-if (! function_exists('languageSpecificCharsArray')) {
+if (! function_exists('language_specific_chars_array')) {
     /**
      * Returns the language specific replacements for the ascii method.
      *
@@ -594,7 +594,7 @@ if (! function_exists('languageSpecificCharsArray')) {
      * @param  string  $language
      * @return array|null
      */
-    function languageSpecificCharsArray($language)
+    function language_specific_chars_array($language)
     {
         static $languageSpecific;
 
