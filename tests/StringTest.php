@@ -6,7 +6,6 @@ class StringTest extends \PHPUnit\Framework\TestCase
     {
         $this->assertEquals('fooBar', camel_case('FooBar'));
         $this->assertEquals('fooBar', camel_case('foo_bar'));
-        $this->assertEquals('fooBar', camel_case('foo_bar')); // test cache
         $this->assertEquals('fooBarBaz', camel_case('Foo-barBaz'));
         $this->assertEquals('fooBarBaz', camel_case('foo-bar_baz'));
     }
@@ -22,12 +21,13 @@ class StringTest extends \PHPUnit\Framework\TestCase
     public function testKebabCase()
     {
         $this->assertEquals('laravel-php-framework', kebab_case('LaravelPhpFramework'));
+        $this->assertEquals('php-helpers-function', kebab_case('PhpHelpersFunction'));
     }
 
     public function testSnakeCase()
     {
         $this->assertEquals('foo_bar', snake_case('fooBar'));
-        $this->assertEquals('foo_bar', snake_case('fooBar')); // test cache
+        $this->assertEquals('hello_world', snake_case('HelloWorld'));
     }
 
     public function testStartsWith()
@@ -171,7 +171,6 @@ class StringTest extends \PHPUnit\Framework\TestCase
     {
         $this->assertEquals('FooBar', studly_case('fooBar'));
         $this->assertEquals('FooBar', studly_case('foo_bar'));
-        $this->assertEquals('FooBar', studly_case('foo_bar')); // test cache
         $this->assertEquals('FooBarBaz', studly_case('foo-barBaz'));
         $this->assertEquals('FooBarBaz', studly_case('foo-bar_baz'));
     }
