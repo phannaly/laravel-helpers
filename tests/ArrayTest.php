@@ -670,33 +670,6 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
     }
 }
 
-trait SupportTestTraitOne
-{
-}
-
-trait SupportTestTraitTwo
-{
-    use SupportTestTraitOne;
-}
-
-class SupportTestClassOne
-{
-    use SupportTestTraitTwo;
-}
-
-class SupportTestClassTwo extends SupportTestClassOne
-{
-}
-
-trait SupportTestTraitThree
-{
-}
-
-class SupportTestClassThree extends SupportTestClassTwo
-{
-    use SupportTestTraitThree;
-}
-
 class SupportTestArrayAccess implements ArrayAccess
 {
     protected $attributes = [];
