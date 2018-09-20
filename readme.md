@@ -4,7 +4,11 @@
 
 This project is independently you don't need to install anything(composer) unless you want to contribute.
 
-Most of the code and logic extract from Laravel code base.
+Most of the code extract from Laravel codebase.
+
+## Requirements
+
+* PHP 7.0 or higher
 
 ## Setup
 
