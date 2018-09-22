@@ -394,22 +394,24 @@ $sorted = array_values(array_sort($array, function ($value) {
 ```
 
 <a name="method-array-sort-recursive"></a>
-#### `array_sort_recursive()` 
+#### `array_sort_recursive()`
 
-The array_sort_recursive function recursively sorts an array using the sort function:
+The `array_sort_recursive` function recursively sorts an array using the `sort` function for numeric sub=arrays and `ksort` for associative sub-arrays:
 
-```php
+```
 $array = [
     ['Roman', 'Taylor', 'Li'],
     ['PHP', 'Ruby', 'JavaScript'],
+    ['one' => 1, 'two' => 2, 'three' => 3],
 ];
 
 $sorted = array_sort_recursive($array);
 
 /*
     [
-        ['Li', 'Roman', 'Taylor'],
         ['JavaScript', 'PHP', 'Ruby'],
+        ['one' => 1, 'three' => 3, 'two' => 2],
+        ['Li', 'Roman', 'Taylor'],
     ]
 */
 ```
