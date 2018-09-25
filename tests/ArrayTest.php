@@ -188,32 +188,18 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
     {
         $data = [
             'post-1' => [
-                'comments' => [
-                    'tags' => [
-                        '#foo', '#bar',
-                    ],
+                'comments' => ['tags' => ['#foo', '#bar'],
                 ],
             ],
             'post-2' => [
-                'comments' => [
-                    'tags' => [
-                        '#baz',
-                    ],
+                'comments' => ['tags' => ['#baz'],
                 ],
             ],
         ];
 
         $this->assertEquals([
-            0 => [
-                'tags' => [
-                    '#foo', '#bar',
-                ],
-            ],
-            1 => [
-                'tags' => [
-                    '#baz',
-                ],
-            ],
+            0 => ['tags' => ['#foo', '#bar']],
+            1 => ['tags' => ['#baz']],
         ], array_pluck($data, 'comments'));
 
         $this->assertEquals([['#foo', '#bar'], ['#baz']], array_pluck($data, 'comments.tags'));
@@ -641,29 +627,13 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
     public function testArraySortRecursive()
     {
         $array = [
-            [
-                'foo',
-                'bar',
-                'baz',
-            ],
-            [
-                'baz',
-                'foo',
-                'bar',
-            ],
+            ['foo', 'bar', 'baz'],
+            ['baz', 'foo', 'bar']
         ];
 
         $assumedArray = [
-            [
-                'bar',
-                'baz',
-                'foo',
-            ],
-            [
-                'bar',
-                'baz',
-                'foo',
-            ],
+            ['bar', 'baz', 'foo'],
+            ['bar', 'baz', 'foo']
         ];
 
         $this->assertEquals($assumedArray, array_sort_recursive($array));
