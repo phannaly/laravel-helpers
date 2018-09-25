@@ -1,7 +1,22 @@
 <?php
 
+ /**
+ * The cache of snake-cased words.
+ *
+ * @var array
+ */
 $snakeCache = [];
+/**
+ * The cache of camel-cased words.
+ *
+ * @var array
+ */
 $camelCache = [];
+/**
+ * The cache of studly-cased words.
+ *
+ * @var array
+ */
 $studlyCache = [];
 
 if (! function_exists('camel_case')) {
