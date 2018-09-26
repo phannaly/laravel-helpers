@@ -1,6 +1,6 @@
 <?php
 
- /**
+/**
  * The cache of snake-cased words.
  *
  * @var array
